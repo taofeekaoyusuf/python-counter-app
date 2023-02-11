@@ -1,0 +1,28 @@
+replicaCount: 3
+
+image:
+  repository: dhackbility/python-counter-app
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: LoadBalancer
+  port: 80
+  ingress:
+  host: python-counter-app.local
+
+ingress:
+  enabled: true
+  hosts:
+  - python-counter-app.local
+
+## Application level settings  
+appMode: production
+
+env:
+  - name: APP_PORT
+    value: 8080

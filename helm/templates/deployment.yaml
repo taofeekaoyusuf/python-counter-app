@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-counter-app
+  namespace: python-counter-app
+  labels:
+    app: python-counter-app
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: python-counter-app
+  template:
+    metadata:
+      labels:
+        app: python-counter-app
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.image.containerPort }}
+              protocol: {{ .Values.image.protocol }}
+          volumeMounts:
+          - name: config-volume
+            mountPath: /config    
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
+      volumes:
+        - name: config-volume
+          configMap:
+            name: application-settings 
+      env:
+      - name: {{ .Values.env.name }}
+        value: {{ .Values.env.value }}

@@ -1,0 +1,11 @@
+apiVersion: v2
+name: python-counter-app
+appVersion: v1.0.0
+description: Python counter application
+version: 0.1.0
+keywords:
+  - python
+  - redis
+maintainers:
+  - name: taofeekaoyusuf
+    email: taofeekaoyusuf@gmail.com

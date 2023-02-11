@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-counter-app-sandbox
+  namespace: argocd
+spec:
+  project: python-counter-app
+  source:
+    helm:
+      valueFiles:
+        - values.yaml
+    repoURL: https://github.com/taofeekaoyusuf/python-counter-app
+    path: python-counter-app
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: python-counter-app
+  syncPolicy:
+    automated:
+      prune: true
+      selHeal: true
+  ignoredResources:
+  - group: argoproj.io
+  - group: apps
+  - group: batch
+  healthChecks:
+  - name: check-cluster
+    url: <healthcheck-url>
+    interval: 3m0s
+    timeout: 3m0s
