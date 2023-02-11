@@ -1,6 +1,6 @@
-/Pipfile
 /Pipfile.lock
 .mypy_cache/
+/Pipfile
 helm/.helmignore
 /kubectl
 /kubectl.sha256
