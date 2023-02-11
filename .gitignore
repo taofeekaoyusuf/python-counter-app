@@ -1,0 +1,7 @@
+Pipfile
+Pipfile.lock
+.mypy_cache
+.helmignore
+kubectl
+kubectl.sha256
+requirements.txt
