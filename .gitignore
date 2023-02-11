@@ -1,7 +1,7 @@
-Pipfile
-Pipfile.lock
-.mypy_cache
-.helmignore
-kubectl
-kubectl.sha256
-requirements.txt
+/Pipfile
+/Pipfile.lock
+.mypy_cache/
+helm/.helmignore
+/kubectl
+/kubectl.sha256
+/requirements.txt
