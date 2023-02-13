@@ -27,12 +27,6 @@ spec:
           volumeMounts:
           - name: config-volume
             mountPath: /config
-          livenessProbe:
-            httpGet:
-              port: http
-          readinessProbe:
-            httpGet:
-              port: http
       volumes:
       - name: config-volume
         configMap:
