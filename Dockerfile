@@ -13,7 +13,7 @@ COPY Pipfile /app
 COPY Pipfile.lock /app
 
 # Command to install the requirements
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r ./requirements.txt
 
 # Install the dependencies
 RUN apk add --no-cache \
