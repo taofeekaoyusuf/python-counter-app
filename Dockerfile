@@ -7,8 +7,13 @@ LABEL maintainer="Taofeek A.O. Yusuf"
 # Set the working directory
 WORKDIR /app
 
+# Copy the Python code and dependencies
+COPY server.py /app
+COPY Pipfile /app
+COPY Pipfile.lock /app
+
 # Command to install the requirements
-RUN pip install -r requirements.txt
+RUN export PYTHONPATH=/usr/bin/python && pip3 install --upgrade pip && pip3 install --trusted-host pypi.python.org -r requirements.txt
 
 # Install the dependencies
 RUN apk add --no-cache \
@@ -18,10 +23,7 @@ RUN apk add --no-cache \
   openssl-dev \
   && pip install pipenv
 
-# Copy the Python code and dependencies
-COPY server.py /app
-COPY Pipfile /app
-COPY Pipfile.lock /app
+
 
 # Install the Python dependencies
 RUN pipenv install --ignore-pipfile

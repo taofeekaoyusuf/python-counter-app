@@ -22,7 +22,7 @@ spec:
             name: python-counter-app-service
             port:
               name: http
-  - host: python-counter-redis.local
+  - host: "python-counter-redis.local"
     http:
       paths:
       - path: /
