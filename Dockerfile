@@ -11,9 +11,13 @@ WORKDIR /app
 COPY server.py /app
 COPY Pipfile /app
 COPY Pipfile.lock /app
+COPY requirements.txt /app
 
 # Command to install the requirements
-RUN pip3 install -r ./requirements.txt
+RUN export PYTHONPATH=/usr/bin/python && \ 
+  /usr/local/bin/python -m pip install --upgrade pip && \
+  pip3 install --trusted-host pypi.python.org -r requirements.txt && \
+  rm -rf /var/lib/apt/lists/*
 
 # Install the dependencies
 RUN apk add --no-cache \
