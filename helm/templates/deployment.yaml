@@ -6,26 +6,26 @@ metadata:
   labels:
     app: python-counter-app
 spec:
-  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
       app: python-counter-app
+  replicas: { { .Values.replicaCount } }
   template:
     metadata:
       labels:
         app: python-counter-app
     spec:
       containers:
-        - name: {{ .Chart.Name }}
+        - name: { { .Chart.Name } }
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          imagePullPolicy: { { .Values.image.pullPolicy } }
           ports:
             - name: http
-              containerPort: {{ .Values.image.containerPort }}
-              protocol: {{ .Values.image.protocol }}
+              containerPort: { { .Values.service.containerPort } }
+              protocol: { { .Values.service.protocol } }
           volumeMounts:
-          - name: config-volume
-            mountPath: /config    
+            - name: config-volume
+              mountPath: /config
           livenessProbe:
             httpGet:
               path: /health
@@ -37,7 +37,7 @@ spec:
       volumes:
         - name: config-volume
           configMap:
-            name: application-settings 
+            name: application-settings
       env:
-      - name: {{ .Values.env.name }}
-        value: {{ .Values.env.value }}
+        - name: { { .Values.env.name } }
+          value: { { .Values.env.value } }

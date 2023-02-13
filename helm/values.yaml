@@ -13,7 +13,7 @@ service:
   type: LoadBalancer
   port: 8081
   containerPort: 80
-  ingress:
+  protocol: TCP
   host: python-counter-app.local
 
 ingress:
@@ -25,5 +25,5 @@ ingress:
 appMode: sandbox
 
 env:
-  - name: APP_PORT
-    value: 8085
+  - name: http
+    value: 8080

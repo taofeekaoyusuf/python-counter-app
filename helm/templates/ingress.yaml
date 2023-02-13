@@ -1,7 +1,8 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: python-counter-ingress
+  name: python-counter-app-ingress
+  namespace: python-counter-app
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -9,9 +10,9 @@ spec:
   tls:
   - hosts:
     - python-counter-app.local
-    secretName: tls-certificate
+    secretName: python-counter-app-cert
   rules:
-  - host: python-counter-app.local
+  - host: "python-counter-app.local"
     http:
       paths:
       - path: /
@@ -28,6 +29,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: redis-service
+            name: python-counter-app-service
             port:
               name: redis

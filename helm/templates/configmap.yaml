@@ -2,7 +2,8 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: application-settings
+  namespace: python-counter-app
 data:
   settings.ini: |
-    # possible values : production, development, staging, qa
+    # possible values : sandbox, staging, production
     app_mode = {{ .Values.appMode }}

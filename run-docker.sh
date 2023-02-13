@@ -26,6 +26,7 @@ helm install \
 # Installing Kong Ingress Controller
 helm upgrade -i my-kong kong/kong -n kong \
 --set image.tag=2.8 \
+--set proxy.annotations."service\.beta\.kubernetes\.io\/azure-dns-label-name"=my-kong-proxy \
 --set admin.enabled=true \
 --set admin.http.enabled=true \
 --set ingressController.installCRDs=false \
@@ -41,6 +42,17 @@ helm repo update
 
 # Installing CRDs with Kubectl
 kubectl apply -f https://github.com/cert-manager/cert-manager/release//download/v1.7.1/cert-manager.yaml
+
+# Creating Secret in Cert-Manager namespace
+kubectl create secret tls -n cert-manager ca-key-pair --cert=ca.cert.pem --key=ca.key.pem
+
+# Other Free CA ACME Directory URL
+https://acme-v02.api.letsencrypt.org/directory # For Let's Encrypt
+https://api.buypass.com/acme/directory         # For Buypass
+https://acme.zerossl.com/v2/DV90               # For ZeroSSL
+
+# To annotate ingress object
+kubectl annotate ingress python-counter-app-ingress cert-manager.io/cluster-issuer=letsencrypt
 
 
 
