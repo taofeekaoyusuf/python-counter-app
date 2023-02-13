@@ -31,6 +31,7 @@ k apply -f ./helm/templates/ingress.yaml
 sleep 2
 
 # Annotate Ingress Object with the Cert Issuer
+echo "\n***### Annotate an Ingress Object with Cert Issuer ###***"
 k apply -f ./helm/templates/certgen.yaml
 # k annotate ingress python-counter-app-ingress cert-manager.io/cluster-issuer=letsencrypt
 sleep 2
