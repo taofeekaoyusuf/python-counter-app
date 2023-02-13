@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: dhackbility/python-counter-app
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: v1.0.0
 
 imagePullSecrets: []
 nameOverride: ""
