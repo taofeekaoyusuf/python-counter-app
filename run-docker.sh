@@ -26,7 +26,7 @@ helm install \
 # Installing Kong Ingress Controller
 helm upgrade -i my-kong kong/kong -n kong \
 --set image.tag=2.8 \
---set proxy.annotations."service\.beta\.kubernetes\.io\/azure-dns-label-name"=my-kong-proxy \
+--set proxy.annotations."service\.beta\.kubernetes\.io\/azure-dns-label-name"=my-kong-proxy \ # Add this line if you are installing for ACME Cert Issuer.
 --set admin.enabled=true \
 --set admin.http.enabled=true \
 --set ingressController.installCRDs=false \

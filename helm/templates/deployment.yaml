@@ -6,7 +6,7 @@ metadata:
   labels:
     app: python-counter-app
 spec:
-  selector:
+  selector: 
     matchLabels:
       app: python-counter-app
   replicas: { { .Values.replicaCount } }
