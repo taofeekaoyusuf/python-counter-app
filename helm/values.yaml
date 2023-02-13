@@ -1,4 +1,4 @@
-replicaCount: 1
+replica: 1
 
 image:
   repository: dhackbility/python-counter-app
