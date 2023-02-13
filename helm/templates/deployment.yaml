@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -9,20 +10,20 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{.Values.replicaCount}}
   template:
     metadata:
       labels:
         app: python-counter-app
     spec:
       containers:
-        - name: {{ .Values.image.name }}
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag1 | default .Value.image.tag2 }}
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+        - name: {{.Values.image.name}}
+          image: {{.Values.image.repository}}:{{.Values.image.tag1 | default .Value.image.tag2}}
+          imagePullPolicy: {{.Values.image.pullPolicy}}
           ports:
             - name: http
-              containerPort: {{ .Values.service.containerPort }}
-              protocol: {{ .Values.service.protocol }}
+              containerPort: {{.Values.service.containerPort}}
+              protocol: {{.Values.service.protocol}}
           volumeMounts:
             - name: config-volume
               mountPath: /config
@@ -37,5 +38,6 @@ spec:
           configMap:
             name: application-settings
       env:
-        - name: {{ .Values.env.name }}
-          value: {{ .Values.env.value }}
+        - name: {{.Values.env.name}}
+          value: {{.Values.env.value}}
+
