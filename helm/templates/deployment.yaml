@@ -9,20 +9,20 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: 1
+  replicas: "{{ .Values.replicaCount }}"
   template:
     metadata:
       labels:
         app: python-counter-app
     spec:
       containers:
-        - name: { { .Chart.Name } }
+        - name: "{{ .Chart.Name }}"
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
-          imagePullPolicy: { { .Values.image.pullPolicy } }
+          imagePullPolicy: "{{ .Values.image.pullPolicy }}""
           ports:
             - name: http
-              containerPort: { { .Values.service.containerPort } }
-              protocol: { { .Values.service.protocol } }
+              containerPort: "{{ .Values.service.containerPort }}"
+              protocol: "{{ .Values.service.protocol }}"
           volumeMounts:
             - name: config-volume
               mountPath: /config
@@ -39,5 +39,5 @@ spec:
           configMap:
             name: application-settings
       env:
-        - name: { { .Values.env.name } }
-          value: { { .Values.env.value } }
+        - name: "{{ .Values.env.name }}"
+          value: "{{ .Values.env.value }}"
