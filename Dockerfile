@@ -1,5 +1,5 @@
 # Use an official Python image as the base image
-FROM python:3.9-alpine
+FROM python:3.9.5-alpine
 
 # Command to add a Label
 LABEL maintainer="Taofeek A.O. Yusuf"
@@ -28,6 +28,7 @@ RUN apk add --no-cache \
   && pip install pipenv
 
 # Install the Python dependencies
+RUN pip install --upgrade --user setuptools==58.3.0
 RUN pipenv install --deploy --ignore-pipfile
 # RUN pipenv install --ignore-pipfile
 
