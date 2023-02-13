@@ -29,7 +29,7 @@ RUN apk add --no-cache \
 
 # Install the Python dependencies
 RUN pip install --upgrade --user setuptools==58.3.0
-RUN pipenv install --deploy --ignore-pipfile
+RUN pipenv install
 # RUN pipenv install --ignore-pipfile
 
 # Set the environment variables
