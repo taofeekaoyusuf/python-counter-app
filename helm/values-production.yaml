@@ -11,8 +11,9 @@ fullnameOverride: ""
 
 service:
   type: LoadBalancer
-  port: 80
-  ingress:
+  port: 8081
+  containerPort: 80
+  protocol: TCP
   host: python-counter-app.local
 
 ingress:
@@ -24,5 +25,5 @@ ingress:
 appMode: production
 
 env:
-  - name: APP_PORT
+  - name: http
     value: 8080
