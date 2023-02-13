@@ -28,11 +28,9 @@ spec:
               mountPath: /config
           livenessProbe:
             httpGet:
-              path: /health
               port: http
           readinessProbe:
             httpGet:
-              path: /health
               port: http
       volumes:
         - name: config-volume

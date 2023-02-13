@@ -6,4 +6,4 @@ metadata:
 data:
   settings.ini: |
     # possible values : sandbox, staging, production
-    app_mode = "{{ .Values.appMode }}""
+    app_mode = "{{ .Values.appMode }}"
