@@ -27,10 +27,8 @@ RUN apk add --no-cache \
   openssl-dev \
   && pip install pipenv
 
-
-
 # Install the Python dependencies
-RUN cd /app && pipenv install --ignore-pipfile
+RUN pipenv install --deploy --ignore-pipfile
 # RUN pipenv install --ignore-pipfile
 
 # Set the environment variables
