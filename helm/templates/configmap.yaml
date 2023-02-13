@@ -5,5 +5,4 @@ metadata:
   namespace: python-counter-app
 data:
   settings.ini: |
-    # possible values : sandbox, staging, production
     app_mode = "{{ .Values.appMode }}"
