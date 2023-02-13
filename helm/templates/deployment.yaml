@@ -19,7 +19,7 @@ spec:
       containers:
         - name: {{.Values.image.name}}
           image: {{.Values.image.repository}}
-          #:{{.Values.image.tag1 | default .Value.image.tag2}}
+          # :{{.Values.image.tag1 | default .Value.image.tag2}}
           imagePullPolicy: {{.Values.image.pullPolicy}}
           ports:
             - name: http
