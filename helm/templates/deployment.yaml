@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: { { .Values.replica } }
+  replicas: { { .helm.Values.replica } }
   template:
     metadata:
       labels:
