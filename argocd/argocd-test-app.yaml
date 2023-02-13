@@ -14,7 +14,7 @@ spec:
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: python-counter-app
+    namespace: python-counter-app./helm/templates/
   syncPolicy:
     automated:
       prune: true
@@ -25,6 +25,6 @@ spec:
   - group: batch
   healthChecks:
   - name: check-cluster
-    url: <healthcheck-url>
+    url: /health
     interval: 3m0s
     timeout: 3m0s

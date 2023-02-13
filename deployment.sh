@@ -9,29 +9,29 @@ sleep 2
 
 # Apply/Create a Certificate Issuer
 echo "\n***### Apply/Create a Certificate Issuer ###***"
-k apply -f issuer.yaml
+k apply -f ./helm/templates/issuer.yaml
 sleep 2
 
 # Apply/Create Application Deployment
 echo "\n***### Apply/Create Application Deployment ###***"
-k apply -f deployment.yaml
+k apply -f ./helm/templates/deployment.yaml
 # k create deployment python-counter-app --image=dhackbility/python-counter-app:v1.0.0
 sleep 2
 
 # Apply/Expose Deployment using the Service
 echo "\n***### Apply/Expose a Deployment ###***"
-k apply -f service.yaml
+k apply -f ./helm/templates/service.yaml
 # k expose deployment python-counter-app --name=python-counter-app-service --port=80
 sleep 2
 
 # Apply/Create Ingress
 echo "\n***### Apply/Create an Ingress ###***"
-k apply -f ingress.yaml
+k apply -f ./helm/templates/ingress.yaml
 # k create ingress python-counter-app-ingress --class nginx --rule "python-counter-app.local/*=python-counter-app-service:80,tls=python-counter-app-ingress"
 sleep 2
 
 # Annotate Ingress Object with the Cert Issuer
-k apply -f certgen.yaml
+k apply -f ./helm/templates/certgen.yaml
 # k annotate ingress python-counter-app-ingress cert-manager.io/cluster-issuer=letsencrypt
 sleep 2
 
