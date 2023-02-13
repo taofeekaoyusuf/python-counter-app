@@ -17,17 +17,17 @@ spec:
         app: python-counter-app
     spec:
       containers:
-        - name: {{.Values.image.name | quote}}
-          image: {{.Values.image.repository | quote}}
+      - name: {{.Values.image.name | quote}}
+        image: {{.Values.image.repository | quote}}
           # :{{.Values.image.tag1 | default .Value.image.tag2}}
           imagePullPolicy: {{.Values.image.pullPolicy | quote}}
           ports:
-            - name: http
-              containerPort: {{.Values.service.containerPort | quote}}
-              protocol: {{.Values.service.protocol | quote}}
+          - name: http
+            containerPort: {{.Values.service.containerPort | quote}}
+            protocol: {{.Values.service.protocol | quote}}
           volumeMounts:
-            - name: config-volume
-              mountPath: /config
+          - name: config-volume
+            mountPath: /config
           livenessProbe:
             httpGet:
               port: http
@@ -35,9 +35,9 @@ spec:
             httpGet:
               port: http
       volumes:
-        - name: config-volume
-          configMap:
-            name: application-settings
+      - name: config-volume
+        configMap:
+        - name: application-settings
       env:
         - name: {{.Values.env.name | quote}}
           value: {{.Values.env.value | quote}}
