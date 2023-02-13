@@ -5,3 +5,4 @@ helm/.helmignore
 /kubectl
 /kubectl.sha256
 /requirements.txt
+/requirements.txt
