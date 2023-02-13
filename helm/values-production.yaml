@@ -1,9 +1,9 @@
-replicaCount: 3
+replicaCount: "3"
 
 image:
   repository: dhackbility/python-counter-app
   pullPolicy: IfNotPresent
-  tag: 1.0.0
+  tag: "1.0.0"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -11,8 +11,8 @@ fullnameOverride: ""
 
 service:
   type: LoadBalancer
-  port: 8081
-  containerPort: 80
+  port: "8081"
+  containerPort: "80"
   protocol: TCP
   host: python-counter-app.local
 
@@ -26,4 +26,4 @@ appMode: production
 
 env:
   - name: http
-    value: 8080
+    value: "8080"
