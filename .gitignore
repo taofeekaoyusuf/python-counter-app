@@ -4,3 +4,4 @@
 helm/.helmignore
 /kubectl
 /kubectl.sha256
+/requirements.txt
