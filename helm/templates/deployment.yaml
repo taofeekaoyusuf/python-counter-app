@@ -16,8 +16,8 @@ spec:
         app: python-counter-app
     spec:
       containers:
-        - name: {{ .Chart.name }}
-          image: {{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.appVersion }}
+        - name: {{ .Values.image.name }}
+          image: {{ .Values.image.repository }}:{{ .Values.image.tag1 | default .Value.image.tag2 }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
