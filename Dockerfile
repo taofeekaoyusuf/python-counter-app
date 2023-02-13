@@ -13,7 +13,7 @@ COPY Pipfile /app
 COPY Pipfile.lock /app
 
 # Command to install the requirements
-RUN export PYTHONPATH=/usr/bin/python && pip3 install --upgrade pip && pip3 install --trusted-host pypi.python.org -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Install the dependencies
 RUN apk add --no-cache \
