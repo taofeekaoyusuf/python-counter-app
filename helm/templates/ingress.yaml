@@ -23,8 +23,8 @@ spec:
               service:
                 name: python-counter-app-service
                 port:
-                  name: { { .Values.env.name } }
-                  port: { { .Values.service.containePort } }
+                  name: {{.Values.env.name | quote}}
+                  port: {{.Values.service.containePort | quote}}
     - host: "python-counter-app.local"
       http:
         paths:
