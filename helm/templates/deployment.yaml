@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: { { .Values.replicaCount } }
+  replicas: 1 # { { .Values.replicaCount } }
   template:
     metadata:
       labels:
