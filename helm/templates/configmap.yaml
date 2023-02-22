@@ -5,4 +5,4 @@ metadata:
   namespace: python-counter-app
 data:
   settings.ini: |
-    app_mode = "{{ .*.appMode }}"
+    app_mode = "{{ .Values.appMode }}"
