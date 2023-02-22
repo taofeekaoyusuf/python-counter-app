@@ -10,20 +10,20 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: { { .Values.replicaCount } }
+  replicas: { { .Values.replicaCount | quote } }
   template:
     metadata:
       labels:
         app: python-counter-app
     spec:
       containers:
-        - name: { { .Values.image.name | quote } }
-          image: { { .Values.image.repository | quote } }
-          imagePullPolicy: { { .Values.image.pullPolicy | quote } }
+        - name: { { .Values.image-name | quote } }
+          image: { { .Values.image-repository | quote } }
+          imagePullPolicy: { { .Values.image-pullPolicy | quote } }
           ports:
             - name: http
-              containerPort: { { .Values.service.containerPort | quote } }
-              protocol: { { .Values.service.protocol | quote } }
+              containerPort: { { .Values.service-containerPort | quote } }
+              protocol: { { .Values.service-protocol | quote } }
           volumeMounts:
             - name: config-volume
               mountPath: /config
@@ -32,5 +32,5 @@ spec:
           configMap:
             - name: application-settings
       env:
-        - name: { { .Values.env.name | quote } }
-          value: { { .Values.env.value | quote } }
+        - name: { { .Values.env-name | quote } }
+          value: { { .Values.env-value | quote } }
