@@ -23,7 +23,7 @@ spec:
           ports:
             - name: http
               containerPort: { .Values.service-containerPort }
-              protocol: { { .Values.service-protocol } }
+              protocol: { .Values.service-protocol }
           volumeMounts:
             - name: config-volume
               mountPath: /config
@@ -32,5 +32,5 @@ spec:
           configMap:
             - name: application-settings
       env:
-        - name: { { .Values.env-name } }
-          value: { { .Values.env-value } }
+        - name: { .Values.env-name }
+          value: { .Values.env-value }
