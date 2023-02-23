@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: { .Values.replicaCount | quote }
+  replicas: { - toYaml .Values.replicaCount | nindent 8 }
   template:
     metadata:
       labels:
