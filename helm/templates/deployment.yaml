@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: { .Values.replicaCount | quote }
+  replicas: { .Values.replicaCount }
   template:
     metadata:
       labels:
@@ -21,7 +21,7 @@ spec:
         imagePullPolicy: { .Values.image-pullPolicy | quote }
         ports:
           name: http
-          containerPort: { .Values.service-containerPort | quote }
+          containerPort: { .Values.service-containerPort }
           protocol: { .Values.service-protocol | quote }
         volumeMounts:
           name: config-volume
@@ -32,4 +32,4 @@ spec:
           name: application-settings
       env:
         name: { .Values.env-name | quote }
-        value: { .Values.env-value | quote }
+        value: { .Values.env-value }
