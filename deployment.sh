@@ -36,7 +36,23 @@ k apply -f ./helm/templates/certgen.yaml
 # k annotate ingress python-counter-app-ingress cert-manager.io/cluster-issuer=letsencrypt
 sleep 2
 
+# ARGOCD DEPLOYMENT
 
-# Deploying using ARGOCD
+# Exposing ARGOCD Port
+kubectl port-forward svc/argocd-server -n argocd 8085:443
+
+# Logging into ARGOCD in the Linux CLI environment
+argocd login localhost:8085
+
+# Creating Application from GitHub Repository on ARGOCD
 k apply -f ./argocd/argocd-test-app.yaml
 # argocd app create python-counter-app --repo https://github.com/taofeekaoyusuf/python-counter-app.git --path ./helm/templates/ --dest-server https://kubernetes.default.svc --dest-namespace python-counter-app
+
+# Checking the Status of the Application
+argocd app get python-counter-app
+
+# Syncing the App on ARGOCD
+argocd app sync python-counter-app
+
+# Accessing the Deployed Application using Port-Forwarding operation
+kubectl port-forward svc/helm-guestbook 9090:80
