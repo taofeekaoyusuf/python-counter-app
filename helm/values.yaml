@@ -3,16 +3,16 @@ replicaCount: 1
 image-name: python-counter-app
 image-repository: dhackbility/python-counter-app
 image-pullPolicy: IfNotPresent
-image-tag1: "1.0.0"
-image-tag2: "latest"
+image-tag1: 1.0.0
+image-tag2: latest
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 service-type: LoadBalancer
-service-port: "8081"
-service-containerPort: "80"
+service-port: 8081
+service-containerPort: 80
 service-protocol: TCP
 service-host: python-counter-app.local
 
@@ -23,4 +23,4 @@ ingress-hosts: python-counter-app.local
 appMode: sandbox
 
 env-name: http
-env-value: "8080"
+env-value: 8080
