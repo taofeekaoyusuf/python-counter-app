@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: python-counter-app-service
-  namespace: python-counter-app
+  namespace: default
   labels:
     app: python-counter-app
 spec:
@@ -10,7 +10,7 @@ spec:
     app: python-counter-app
   type: LoadBalancer
   ports:
-    - name: "{{ .Values.env-name }}"
-      port: "{{ .Values.service-containePort }}"
-      targetPort: "{{ .Values.env-value }}"
-      Protocol: "{{ .Values.service-protocol }}"
+    - name: { { .Values.env-name } }
+      port: { { .Values.service-containerPort } }
+      targetPort: { { .Values.env-value } }
+      Protocol: { { .Values.service-protocol } }

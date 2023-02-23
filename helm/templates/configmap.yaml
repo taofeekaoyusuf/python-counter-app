@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: application-settings
-  namespace: python-counter-app
+  namespace: default
 data:
   settings.ini: |
     app_mode = "{{ .Values.appMode }}"

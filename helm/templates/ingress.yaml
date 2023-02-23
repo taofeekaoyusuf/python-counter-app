@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
   name: python-counter-app-ingress
-  namespace: python-counter-app
+  namespace: default
 spec:
   tls:
     - hosts:
