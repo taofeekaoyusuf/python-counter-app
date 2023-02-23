@@ -5,4 +5,4 @@ metadata:
   namespace: default
 data:
   settings.ini: |
-    app_mode = "{{ .Values.appMode }}"
+    app_mode = "{{ .*.appMode }}"
