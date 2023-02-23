@@ -11,7 +11,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 service-type: LoadBalancer
-service-port: 8080
+service-port: 8081
 service-containerPort: 80
 service-protocol: TCP
 service-host: python-counter-app.local
