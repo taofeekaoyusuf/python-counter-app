@@ -23,6 +23,8 @@ spec:
                 port:
                   name: http
                   number: 80
+            path: /
+            pathType: Prefix
     - host: "python-counter-app.local"
       http:
         paths:
@@ -32,3 +34,5 @@ spec:
                 port:
                   name: redis
                   number: 6379
+            path: /
+            pathType: Prefix
