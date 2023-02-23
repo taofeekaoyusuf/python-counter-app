@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: python-counter-app-cert
   issuerRef:
-    name: letsencrypt
+    name: buypass
     kind: ClusterIssuer
   dnsNames:
     - "python-counter-app.local"
