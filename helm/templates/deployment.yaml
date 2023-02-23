@@ -16,13 +16,13 @@ spec:
         app: python-counter-app
     spec:
       containers:
-        - name: { .values.image-name }
-          image: { .Values.image-repository }
-          imagePullPolicy: { .Values.image-pullPolicy }
+        - name: { .values.image-name | quote }
+          image: { .Values.image-repository | quote }
+          imagePullPolicy: { .Values.image-pullPolicy | quote }
           ports:
             - name: http
               containerPort: { .Values.service-containerPort | quote }
-              protocol: { .Values.service-protocol }
+              protocol: { .Values.service-protocol | quote }
           volumeMounts:
             - name: config-volume
               mountPath: /config
@@ -31,5 +31,5 @@ spec:
           configMap:
             - name: application-settings
       env:
-        - name: { .Values.env-name }
+        - name: { .Values.env-name | quote }
           value: { .Values.env-value | quote }
