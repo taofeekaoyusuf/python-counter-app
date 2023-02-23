@@ -21,7 +21,6 @@ spec:
               service:
                 name: python-counter-app-svc
                 port:
-                  name: http
                   number: 80
             path: /
             pathType: Prefix
@@ -32,7 +31,6 @@ spec:
               service:
                 name: python-counter-app-service
                 port:
-                  name: redis
                   number: 6379
             path: /
             pathType: Prefix
