@@ -5,8 +5,10 @@ metadata:
 spec:
   acme:
     email: taofeekaoyusuf@gmail.com
-    storage: acme.json
-    caServer: https://api.buypass.com/acme/directory 
+    storage: /acme.json
+    caServer: https://api.buypass.com/acme/directory
+    privateKeySecretRef:
+      name: buypass-issuer-account-key
     keyType: EC256
     httpChallenge:
       entryPoint: web
