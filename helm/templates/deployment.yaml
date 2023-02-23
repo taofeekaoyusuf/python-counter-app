@@ -25,7 +25,7 @@ spec:
           protocol: { .Values.service-protocol | quote }
         volumeMounts:
           name: config-volume
-          mountPath: /config
+          mountPath: /helm/templates/
       volumes:
         name: config-volume
         configMap:
