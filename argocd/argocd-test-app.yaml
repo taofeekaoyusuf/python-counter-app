@@ -10,11 +10,11 @@ spec:
       valueFiles:
         - values.yaml
     repoURL: https://github.com/taofeekaoyusuf/python-counter-app
-    path: python-counter-app
+    path: ./argocd/
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: python-counter-app./helm/templates/
+    path: ./helm/templates/
   syncPolicy:
     automated:
       prune: true
