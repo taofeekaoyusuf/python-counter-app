@@ -1,7 +1,7 @@
 apiVersion: v2
 name: python-counter-app
 appVersion: latest
-description: Python counter application
+description: Python Counter Application
 version: 0.1.0
 keywords:
   - python
