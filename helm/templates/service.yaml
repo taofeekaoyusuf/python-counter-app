@@ -10,7 +10,7 @@ spec:
     app: python-counter-app
   type: LoadBalancer
   ports:
-    - name: { .Values.env-name | quote }
+    - name: { .Values.service-host | quote }
       port: { .Values.service-containerPort | quote }
-      targetPort: { .Values.env-value | quote }
+      targetPort: { .Values.service-targetPort | quote }
       Protocol: { .Values.service-protocol | quote }

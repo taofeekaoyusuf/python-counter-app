@@ -11,7 +11,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 service-type: LoadBalancer
-service-port: 8081
+service-targetPort: 8090
 service-containerPort: 80
 service-protocol: TCP
 service-host: python-counter-app.local
@@ -23,7 +23,7 @@ ingress-hosts: python-counter-app.local
 appMode: production
 
 env-name: http
-env-value: 8080
+env-value: 8090
 
 # replicaCount: 3
 
