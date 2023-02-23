@@ -15,7 +15,7 @@ sleep 2
 # Apply/Create Application Deployment
 echo "\n***### Apply/Create Application Deployment ###***"
 k apply -f ./helm/templates/deployment.yaml
-# k create deployment python-counter-app --image=dhackbility/python-counter-app:v1.0.0
+# k create deployment python-counter-app --namespace python-counter-app --image=dhackbility/python-counter-app:v1.0.0
 sleep 2
 
 # Apply/Expose Deployment using the Service
