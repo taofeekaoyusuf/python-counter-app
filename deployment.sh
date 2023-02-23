@@ -36,3 +36,7 @@ k apply -f ./helm/templates/certgen.yaml
 # k annotate ingress python-counter-app-ingress cert-manager.io/cluster-issuer=letsencrypt
 sleep 2
 
+
+# Deploying using ARGOCD
+k apply -f ./argocd/argocd-test-app.yaml
+# argocd app create python-counter-app --repo https://github.com/taofeekaoyusuf/python-counter-app.git --path ./helm/templates/ --dest-server https://kubernetes.default.svc --dest-namespace python-counter-app

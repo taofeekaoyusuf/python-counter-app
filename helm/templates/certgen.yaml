@@ -2,7 +2,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: python-counter-app
-  namespace: python-counter-app
+  namespace: default
 spec:
   secretName: python-counter-app-cert
   issuerRef:
