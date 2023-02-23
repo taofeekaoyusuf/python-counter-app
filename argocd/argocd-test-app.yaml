@@ -10,7 +10,7 @@ spec:
       valueFiles:
         - values.yaml
     repoURL: https://github.com/taofeekaoyusuf/python-counter-app
-    path: ./argocd/
+    path: python-counter-app
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
@@ -25,6 +25,5 @@ spec:
   - group: batch
   healthChecks:
   - name: check-cluster
-    url: /health
     interval: 3m0s
     timeout: 3m0s
