@@ -24,4 +24,4 @@ ingress-hosts: python-counter-app.local
 appMode: sandbox
 
 envName: http
-envValue: "8090"
+envValue: 8090

@@ -24,4 +24,4 @@ ingress-hosts: python-counter-app.local
 appMode: staging
 
 envName: http
-envValue: "8090"
+envValue: 8090
