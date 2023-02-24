@@ -6,7 +6,7 @@ metadata:
   name: python-counter-app
   namespace: python-counter-app
 spec:
-  replicas: "{{ .Values.replicaCount }}"
+  replicas: { { .Values.replicaCount } }
   selector:
     matchLabels:
       app: python-counter-app
@@ -16,10 +16,6 @@ spec:
       labels:
         app: python-counter-app
     spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
       containers:
         image: "{{ .Values.imageRepository }}"
         name: "{{ .Values.imageName }}"
