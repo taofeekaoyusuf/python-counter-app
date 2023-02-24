@@ -46,11 +46,7 @@ argocd login localhost:8085
 
 # Creating Application from GitHub Repository on ARGOCD
 # k apply -f ./argocd/argocd-test-app.yaml
-argocd app create python-counter-app \ 
---repo https://github.com/taofeekaoyusuf/python-counter-app.git \
---path "./helm/templates/" \
---dest-server https://kubernetes.default.svc \
---dest-namespace default # python-counter-app
+argocd app create python-counter-app --repo https://github.com/taofeekaoyusuf/python-counter-app.git --path "./helm/templates/" --dest-server https://kubernetes.default.svc --dest-namespace default # python-counter-app
 
 # Checking the Status of the Application
 argocd app get python-counter-app
