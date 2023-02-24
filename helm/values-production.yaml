@@ -4,7 +4,7 @@ replicas: 3
 imageName: python-counter-app
 imageRepository: dhackbility/python-counter-app:1.0.0
 imagePullPolicy: IfNotPresent
-imageTag: "1.0.0"
+imageTag: 1.0.0
 
 imagePullSecrets: []
 nameOverride: ""
@@ -12,8 +12,8 @@ fullnameOverride: ""
 
 # service:
 serviceType: LoadBalancer
-serviceTargetPort: "8090"
-serviceContainerPort: "80"
+serviceTargetPort: 8090
+serviceContainerPort: 80
 serviceProtocol: TCP
 serviceHost: python-counter-app.local
 
