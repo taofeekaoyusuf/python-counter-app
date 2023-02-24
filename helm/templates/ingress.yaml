@@ -9,11 +9,11 @@ metadata:
   namespace: python-counter-app
 spec:
   tls:
-    - hosts: python-counter-app.local
-      secretName: python-counter-app-cert
+    hosts: python-counter-app.local
+    secretName: python-counter-app-cert
   ingressClassName: nginx
   rules:
-    - host: "python-counter-app.local"
+    - host: python-counter-app.local
       http:
         paths:
           - backend:
