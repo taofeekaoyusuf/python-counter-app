@@ -33,7 +33,7 @@ spec:
               initialDelaySeconds: 3
               periodSeconds: 3
           ports:
-            - containerPort: 80"
+            - containerPort: 80
               name: http
               protocol: "TCP"
           resources:
@@ -45,7 +45,7 @@ spec:
               memory: "128Mi"
           volumeMounts:
             name: config-volume
-            mountPath: /etc/volume
+            mountPath: /
       volumes:
         name: config-volume
         configMap:
@@ -53,4 +53,3 @@ spec:
       env:
         - name: "{{ .Values.env.name }}"
           value: "{{ .Values.env.value }}"
-status: {}
