@@ -1,4 +1,4 @@
-replicaCount: !!int 1
+replicaCount: !!int "1"
 
 # image:
 imageName: python-counter-app
