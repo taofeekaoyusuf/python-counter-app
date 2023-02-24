@@ -12,8 +12,8 @@ spec:
       app: python-counter-app
   strategy:
     rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+      maxSurge: "25%"
+      maxUnavailable: "25%"
     type: RollingUpdate
   template:
     metadata:
@@ -25,13 +25,13 @@ spec:
           name: python-counter-app
           imagePullPolicy: IfNotPresent
           env:
-            - name: http
-              value: "8087"
+            - name: "http"
+              value: 8087
           ports:
-            - containerPort: "80"
-              name: http
+            - containerPort: 80
+              name: "http"
               protocol: TCP
-              hostPort: "8087"
+              hostPort: 8087
           volumes:
             - name: config-volume
               configMap:
@@ -42,18 +42,18 @@ spec:
           readinessProbe:
             httpGet:
               path: /healthz
-              port: "80"
+              port: 80
               scheme: HTTP
           livenessProbe:
             httpGet:
               path: /healthz
-              port: "80"
+              port: 80
               scheme: HTTP
           resources:
             requests:
-              cpu: "250m"
-              memory: "64mi"
+              cpu: 250m
+              memory: 64mi
             limits:
-              cpu: "500m"
-              memory: "128Mi"
+              cpu: 500m
+              memory: 128Mi
       dnsPolicy: Default
