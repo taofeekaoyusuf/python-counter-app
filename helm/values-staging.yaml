@@ -17,6 +17,7 @@ serviceTargetPort: 8090
 serviceProtocol: TCP
 serviceHost: python-counter-app.local
 containerPort: 80
+
 livenessProbe:
     path: /healthz
     port: 80
