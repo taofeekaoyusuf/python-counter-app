@@ -55,4 +55,4 @@ argocd app get python-counter-app
 argocd app sync python-counter-app
 
 # Accessing the Deployed Application using Port-Forwarding operation
-kubectl port-forward svc/helm-guestbook 9090:80
+kubectl port-forward svc/python-counter-app 8087:80
