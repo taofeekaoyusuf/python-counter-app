@@ -14,7 +14,7 @@ spec:
   ingressClassName: nginx
   rules:
     host: python-counter-app.local
-      http:
+    http:
       paths:
         backend:
           service:
@@ -26,10 +26,10 @@ spec:
     host: python-counter-app.local
     http:
       paths:
-        - backend:
-            service:
-              name: python-counter-app-svc
-              port:
-                number: 6379
-          path: /
-          pathType: Prefix
+        backend:
+          service:
+            name: python-counter-app-svc
+            port:
+              number: 6379
+        path: /
+        pathType: Prefix
