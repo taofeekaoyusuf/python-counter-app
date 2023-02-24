@@ -2,10 +2,9 @@ replicaCount: "3"
 
 # image:
 imageName: python-counter-app
-imageRepository: dhackbility/python-counter-app
+imageRepository: dhackbility/python-counter-app:1.0.0
 imagePullPolicy: IfNotPresent
-imageTag1: "1.0.0"
-imageTag2: latest
+imageTag: 1.0.0
 
 imagePullSecrets: []
 nameOverride: ""

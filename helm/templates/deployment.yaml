@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         name: { { .Values.imageName } }
-        image: { { .Values.imageRepository | quote } }:{{ .Values.imageTag1 }}
+        image: { { .Values.imageRepository | quote } }
         imagePullPolicy: { { .Values.imagePullPolicy | quote } }
         ports:
           name: http
