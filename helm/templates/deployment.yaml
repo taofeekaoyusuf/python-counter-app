@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: python-counter-app
-  name: python-counter-app
+  name: "python-counter-app"
   namespace: default
 spec:
   replicas: 1
@@ -38,7 +38,7 @@ spec:
             failureThreshold: 5
           ports:
             - containerPort: 80
-              name: http
+              name: "http"
               protocol: "TCP"
           resources:
             requests:
@@ -48,13 +48,13 @@ spec:
               cpu: "500m"
               memory: "128Mi"
           volumeMounts:
-            name: config-volume
+            name: "config-volume"
             mountPath: /
       dnsPolicy: Default
       volumes:
-      - name: config-volume
-        configMap:
-          name: application-settings
+        - name: "config-volume"
+          configMap:
+            name: "application-settings"
       env:
         - name: "{{ .Values.env.name }}"
           value: "{{ .Values.env.value }}"
