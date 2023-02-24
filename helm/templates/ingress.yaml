@@ -2,15 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    cert-manager.io/cluster-issuer: bp
+    cert-manager.io/cluster-issuer: "bp"
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
   name: python-counter-app-route
   namespace: python-counter-app
 spec:
   tls:
-    - hosts:
-        - python-counter-app.local
+    - hosts: python-counter-app.local
       secretName: python-counter-app-cert
   ingressClassName: nginx
   rules:
@@ -29,7 +28,7 @@ spec:
         paths:
           - backend:
               service:
-                name: python-counter-app-service
+                name: python-counter-app-svc
                 port:
                   number: 6379
             path: /

@@ -2,6 +2,10 @@ apiVersion: v2
 name: python-counter-app
 appVersion: latest
 description: Python Counter Application
+dependencies:
+  - name: python-counter-app
+    version: "1.0.0"
+    repository: "dhackbility/python-counter-app:1.0.0"
 version: 1.0.0
 keywords:
   - python
