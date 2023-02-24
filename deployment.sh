@@ -39,20 +39,25 @@ sleep 2
 # ARGOCD DEPLOYMENT
 
 # Exposing ARGOCD Port
-kubectl port-forward svc/argocd-server -n argocd 8080:443
+kubectl port-forward svc/argocd-server -n argocd 8080:443 &
+sleep 2
 
 # Logging into ARGOCD in the Linux CLI environment
 argocd login localhost:8080
+sleep 2
 
 # Creating Application from GitHub Repository on ARGOCD
 # k apply -f ./argocd/argocd-test-app.yaml
 argocd app create python-counter-app --repo https://github.com/taofeekaoyusuf/python-counter-app.git --path "./helm/templates/" --dest-server https://kubernetes.default.svc --dest-namespace python-counter-app # default
+sleep 2
 
 # Checking the Status of the Application
 argocd app get python-counter-app
+sleep 2
 
 # Syncing the App on ARGOCD
 argocd app sync python-counter-app
+sleep 2
 
 # Accessing the Deployed Application using Port-Forwarding operation
 kubectl port-forward svc/python-counter-app 8087:80
