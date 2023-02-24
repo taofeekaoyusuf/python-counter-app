@@ -32,4 +32,4 @@ spec:
           name: application-settings
       env:
         name: "{{ .Values.envName }}"
-        value: { { .Values.envValue | quote } }
+        value: "{{ .Values.envValue }}"
