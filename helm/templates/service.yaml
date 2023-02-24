@@ -9,8 +9,8 @@ spec:
   ports:
     - port: 80 # "{{ .Values.service.port }}"
       targetPort: 8087 # "{{ .Values.service.targetPort }}"
-      protocol: {{ .Values.service.protocol }}
-      name: {{ .Values.service.name }}
+      protocol: {{ .Values.service.protocol | quote}}
+      name: {{ .Values.service.name | quote }}
   selector:
     app: python-counter-app
   type: ClusterIP
