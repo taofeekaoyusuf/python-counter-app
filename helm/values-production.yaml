@@ -11,9 +11,9 @@ nameOverride: ""
 fullnameOverride: ""
 
 # service:
-serviceType: LoadBalancer
+serviceType: ClusterIP
+servicePort: 80
 serviceTargetPort: 8090
-serviceContainerPort: 80
 serviceProtocol: TCP
 serviceHost: python-counter-app.local
 
