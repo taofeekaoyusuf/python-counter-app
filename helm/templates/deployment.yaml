@@ -31,5 +31,5 @@ spec:
         configMap:
           name: application-settings
       env:
-        name: { { .Values.envName | quote } }
+        name: "{{ .Values.envName }}"
         value: { { .Values.envValue | quote } }
