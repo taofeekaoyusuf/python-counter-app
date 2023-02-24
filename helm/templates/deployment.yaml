@@ -6,7 +6,7 @@ metadata:
   name: python-counter-app
   namespace: python-counter-app
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: { { .Values.replicaCount | quote } }
   selector:
     matchLabels:
       app: python-counter-app
@@ -23,13 +23,13 @@ spec:
         readinessProbe:
           httpGet:
             path: "{{ .Values.readinessProbe.path }}"
-            port: {{ .Values.readinessProbe.port }}
+            port: { { .Values.readinessProbe.port } }
         livenessProbe:
           httpGet:
             path: "{{ .Values.livenessProbe.path }}"
-            port: {{ .Values.livenessProbe.port }}
+            port: { { .Values.livenessProbe.port } }
         ports:
-          - containerPort: {{ .Values.service.port }}
+          - containerPort: { { .Values.service.port } }
             name: http
             protocol: "{{ .Values.service.protocol }}"
         resources:
@@ -48,5 +48,5 @@ spec:
           name: application-settings
       env:
         name: "{{ .Values.envName }}"
-        value: {{ .Values.envValue }}
+        value: { { .Values.envValue } }
 status: {}
