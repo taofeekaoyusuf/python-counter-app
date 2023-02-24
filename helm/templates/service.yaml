@@ -7,7 +7,7 @@ metadata:
   namespace: python-counter-app
 spec:
   ports:
-    - port: { .Values.port }
+    - port: {{ .Values.port }}
       targetPort: "{{ .Values.targetPort }}"
       protocol: "{{ .Values.protocol }}"
       name: "{{ .Values.name }}"
