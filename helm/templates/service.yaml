@@ -11,6 +11,6 @@ spec:
   type: LoadBalancer
   ports:
     host: "{{ .Values.serviceHost }}"
-    port: "{{ .Values.serviceContainerPort }}"
+    servicePort: "{{ .Values.containerPort }}"
     targetPort: "{{ .Values.serviceTargetPort }}"
     Protocol: "{{ .Values.serviceProtocol }}"
