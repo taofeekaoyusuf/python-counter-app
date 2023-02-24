@@ -16,10 +16,8 @@ COPY Pipfile.lock /app
 COPY requirements.txt /app
 
 # Command to install the requirements
-RUN python -m pip install --upgrade pip && \
-  # /usr/local/bin/python -m pip install --upgrade pip && export PYTHONPATH=/usr/bin/python && \ 
-  pip3 install --trusted-host pypi.python.org -r requirements.txt && \
-  rm -rf /var/lib/apt/lists/*
+RUN pip3 install --trusted-host pypi.python.org -r requirements.txt && rm -rf /var/lib/apt/lists/*
+# /usr/local/bin/python -m pip install --upgrade pip && export PYTHONPATH=/usr/bin/python &&  python -m pip install --upgrade pip && \ 
 
 # Install the dependencies
 RUN apk add --no-cache \
