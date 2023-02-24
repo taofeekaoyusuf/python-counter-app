@@ -21,7 +21,7 @@ spec:
         imagePullPolicy: "{{ .Values.imagePullPolicy }}"
         ports:
           name: http
-          containerPort: { { .Values.serviceContainerPort | quote } }
+          containerPort: "{{ .Values.serviceContainerPort }}"
           protocol: { { .Values.serviceProtocol | quote } }
         volumeMounts:
           name: config-volume
