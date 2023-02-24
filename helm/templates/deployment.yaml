@@ -38,8 +38,8 @@ spec:
             failureThreshold: 5
           ports:
             - containerPort: 80
-              name: "http"
-              protocol: "TCP"
+              name: http
+              protocol: TCP
           resources:
             requests:
               cpu: "250m"
