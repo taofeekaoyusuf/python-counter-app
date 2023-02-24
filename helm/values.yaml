@@ -2,7 +2,7 @@ replicaCount: !!int 1
 
 image:
   name: python-counter-app
-  repository: dhackbility/python-counter-app
+  repository: dhackbility/python-counter-app:1.0.0
   pullPolicy: IfNotPresent
   tag: 1.0.0
 
