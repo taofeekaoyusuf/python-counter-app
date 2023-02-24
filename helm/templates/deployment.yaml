@@ -45,12 +45,12 @@ spec:
               memory: "{{ .Values.resources.limits.memory }}"
           volumeMounts:
             name: config-volume
-            mountPath: "./helm/templates/"
+            mountPath: /etc/volume
       volumes:
         name: config-volume
         configMap:
           name: application-settings
       env:
-      - name: "{{ .Values.env.name }}"
-        value: "{{ .Values.env.value }}"
+        - name: "{{ .Values.env.name }}"
+          value: "{{ .Values.env.value }}"
 status: {}
