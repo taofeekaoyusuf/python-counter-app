@@ -6,7 +6,7 @@ metadata:
   name: python-counter-app
   namespace: python-counter-app
 spec:
-  replicas: {{- toInt .Values.replicaCount }}
+  replicas: {{- typeOf int .Values.replicaCount }}
   selector:
     matchLabels:
       app: python-counter-app
