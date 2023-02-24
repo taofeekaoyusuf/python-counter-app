@@ -9,7 +9,7 @@ spec:
   ports:
     - port: 80
       targetPort: 8087
-      protocol: "{ .Values.service.protocol }"
+      protocol: "TCP"
   selector:
     app: python-counter-app
   type: ClusterIP
