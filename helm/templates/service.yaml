@@ -13,4 +13,4 @@ spec:
     host: { .Values.serviceHost | quote }
     port: { .Values.serviceContainerPort }
     targetPort: { .Values.serviceTargetPort }
-    Protocol: { { .Values.serviceProtocol | quote } }
+    Protocol: { .Values.serviceProtocol | quote }
