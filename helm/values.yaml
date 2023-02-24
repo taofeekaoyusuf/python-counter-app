@@ -17,10 +17,10 @@ service:
   protocol: !!str TCP
 
 livenessProbe:
-    path: /healthz
+    path: !!str "/healthz"
     port: !!int 80
 readinessProbe:
-    path: /healthz
+    path: !!str "/healthz"
     port: !!int 80
 
 resources: 
