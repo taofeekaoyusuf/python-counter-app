@@ -36,5 +36,6 @@ ingress-hosts: python-counter-app.local
 ## Application level settings  
 appMode: production
 
-envName: http
-envValue: !!int 8087
+env:
+  name: http
+  value: !!int 8087

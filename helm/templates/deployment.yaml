@@ -47,6 +47,6 @@ spec:
         configMap:
           name: application-settings
       env:
-        name: "{{ .Values.envName }}"
-        value: "{{ .Values.envValue }}"
+        name: "{{ .Values.env.name }}"
+        value: "{{ .Values.env.value }}"
 status: {}
