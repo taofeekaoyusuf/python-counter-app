@@ -1,10 +1,10 @@
-replicas: 2
+replicas: !!int 2
 
 # image:
 imageName: python-counter-app
 imageRepository: dhackbility/python-counter-app:1.0.0
 imagePullPolicy: IfNotPresent
-imageTag: 1.0.0
+imageTag: !!str 1.0.0
 
 imagePullSecrets: []
 nameOverride: ""
@@ -12,17 +12,17 @@ fullnameOverride: ""
 
 # service:
 serviceType: ClusterIP
-serviceTargetPort: 8090
+serviceTargetPort: !!int 8087
 serviceProtocol: TCP
 serviceHost: python-counter-app.local
-containerPort: 80
+containerPort: !!int 80
 
 livenessProbe:
     path: /healthz
-    port: 80
+    port: !!int 80
 readinessProbe:
     path: /healthz
-    port: 80
+    port: !!int 80
 
 resources: 
   requests: 
@@ -39,4 +39,4 @@ ingress-hosts: python-counter-app.local
 appMode: staging
 
 envName: http
-envValue: 8090
+envValue: !!int 8087
