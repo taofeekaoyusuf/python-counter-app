@@ -1,9 +1,10 @@
-replicaCount: !!int "2"
+replicaCount: !!int 2
 
 image:
   name: python-counter-app
-  repository: dhackbility/python-counter-app:1.0.0
+  repository: dhackbility/python-counter-app
   pullPolicy: IfNotPresent
+  tags: 1.0.0
 
 imagePullSecrets: []
 nameOverride: ""
