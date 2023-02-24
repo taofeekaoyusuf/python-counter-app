@@ -16,13 +16,13 @@ spec:
         app: python-counter-app
     spec:
       containers:
-        name: { { .Values.image.name | quote } }
-        image: { { .Values.image.repository | quote } }:{{ .Values.image.tag1 | quote }}
-        imagePullPolicy: { { .Values.image.pullPolicy | quote } }
+        name: { { .Values.imageName | quote } }
+        image: { { .Values.imageRepository | quote } }:{{ .Values.imageTag1 | quote }}
+        imagePullPolicy: { { .Values.imagePullPolicy | quote } }
         ports:
           name: http
-          containerPort: { { .Values.service.containerPort | quote } }
-          protocol: { { .Values.service.protocol | quote } }
+          containerPort: { { .Values.serviceContainerPort | quote } }
+          protocol: { { .Values.serviceProtocol | quote } }
         volumeMounts:
           name: config-volume
           mountPath: /helm/templates/
@@ -31,5 +31,5 @@ spec:
         configMap:
           name: application-settings
       env:
-        name: { { .Values.env.name | quote } }
-        value: { { .Values.env.value | quote } }
+        name: { { .Values.envName | quote } }
+        value: { { .Values.envValue | quote } }
