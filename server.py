@@ -1,6 +1,5 @@
 import os
 import json
-# import settings
 
 from klein import Klein
 from storage import Storage
