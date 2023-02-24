@@ -4,18 +4,17 @@ replicaCount: !!int "2"
 imageName: python-counter-app
 imageRepository: dhackbility/python-counter-app:1.0.0
 imagePullPolicy: IfNotPresent
-imageTag: !!str 1.0.0
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
 # service:
-serviceType: ClusterIP
-serviceTargetPort: !!int "8087"
-serviceProtocol: TCP
-serviceHost: python-counter-app.local
-containerPort: !!int "80"
+type: ClusterIP
+port: !!int "80"
+targetPort: !!int "8087"
+protocol: TCP
+name: python-counter-app.local
 
 livenessProbe:
     path: /healthz

@@ -7,10 +7,10 @@ metadata:
   namespace: python-counter-app
 spec:
   ports:
-    host: "{{ .Values.serviceHost }}"
-    servicePort: "{{ .Values.containerPort }}"
-    targetPort: "{{ .Values.serviceTargetPort }}"
-    Protocol: "{{ .Values.serviceProtocol }}"
+    - port: "{{ .Values.port }}"
+      targetPort: "{{ .Values.targetPort }}"
+      protocol: "{{ .Values.protocol }}"
+      name: "{{ .Values.name }}"
   selector:
     app: python-counter-app
   type: ClusterIP
