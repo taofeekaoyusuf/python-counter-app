@@ -15,11 +15,14 @@ COPY Pipfile.lock /app
 COPY requirements.txt /app
 
 # Command to install the requirements
-RUN sudo apt-get update; \
-  sudo apt-get -y upgrade; \
-  sudo apt-get install -y gnupg2 wget lsb-release \
-  apk add --update linux-headers; \
-  pip3 install --trusted-host pypi.python.org -r requirements.txt && rm -rf /var/lib/apt/lists/* 
+RUN export PYTHONPATH=/usr/bin/python & \
+  sudo apt-get update & \
+  sudo apt-get -y upgrade & \
+  sudo apt-get install -y gnupg2 wget lsb-release & \
+  apk add --update linux-headers & \
+  pip3 install --upgrade pip & \
+  pip3 install --trusted-host pypi.python.org -r requirements.txt & \
+  rm -rf /var/lib/apt/lists/* 
 
 # Install the dependencies
 RUN apk add --no-cache \
