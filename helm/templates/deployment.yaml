@@ -24,21 +24,21 @@ spec:
         - image: dhackbility/python-counter-app:1.0.0
           name: python-counter-app
           imagePullPolicy: IfNotPresent
-        - env:
-            - name: http
-              value: 8087
-        - ports:
-            - containerPort: 80
-              name: http
-              protocol: TCP
-              hostPort: 8087
-        - volumes:
-            - name: config-volume
-              configMap:
-                name: application-settings
-            - volumeMounts:
-                name: config-volume
-                mountPath: /
+          env:
+          - name: http
+            value: 8087
+          ports:
+          - containerPort: 80
+            name: http
+            protocol: TCP
+            hostPort: 8087
+          volumes:
+          - name: config-volume
+            configMap:
+              name: application-settings
+            volumeMounts:
+              name: config-volume
+              mountPath: /
           readinessProbe:
             httpGet:
               path: /healthz
