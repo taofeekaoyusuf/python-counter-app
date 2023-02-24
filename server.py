@@ -1,11 +1,21 @@
+import os
 import json
-import settings
+# import settings
 
 from klein import Klein
 from storage import Storage
 
+# Server settings
+SERVER_HOST = "0.0.0.0"
+SERVER_PORT = os.environ.get("SERVER_PORT", 80)
+
+# Redis settings
+REDIS_HOST = os.environ.get("REDIS_HOST", "localhost")
+REDIS_PORT = 6379
+REDIS_PWD = "qwerty"
+
 app = Klein()
-storage = Storage(settings.REDIS_HOST, settings.REDIS_PORT, settings.REDIS_PWD)
+storage = Storage(REDIS_HOST, REDIS_PORT, REDIS_PWD)
 
 
 @app.route('/')
@@ -39,4 +49,4 @@ def reset(request):
 
 
 if __name__ == "__main__":
-    app.run(settings.SERVER_HOST, settings.SERVER_PORT)
+    app.run(SERVER_HOST, SERVER_PORT)
