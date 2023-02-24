@@ -33,9 +33,9 @@ spec:
             path: "{{ .Values.livenessProbe.path }}"
             port: "{{ .Values.livenessProbe.port }}"
         ports:
-          - containerPort: "{{ .Values.containerPort }}"
+          - containerPort: "{{ .Values.port }}"
             name: http
-            protocol: "{{ .Values.serviceProtocol }}"
+            protocol: "{{ .Values.protocol }}"
         resources:
           requests:
             cpu: "{{ .Values.resources.requests.CPU }}"
