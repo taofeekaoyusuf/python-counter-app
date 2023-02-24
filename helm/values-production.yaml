@@ -26,10 +26,10 @@ readinessProbe:
 resources: 
   requests: 
     memory: 64Mi
-    CPU: 250m
+    cpu: 250m
   limits:
     memory: 128Mi
-    CPU: 500m
+    cpu: 500m
 
 ingress-enabled: true
 ingress-hosts: !!str python-counter-app.local

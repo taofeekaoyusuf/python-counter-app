@@ -34,10 +34,10 @@ spec:
               protocol: "{{ .Values.service.protocol }}"
           resources:
             requests:
-              cpu: "{{ .Values.resources.requests.CPU }}"
+              cpu: "{{ .Values.resources.requests.cpu }}"
               memory: "{{ .Values.resources.requests.memory }}"
             limits:
-              cpu: "{{ .Values.resources.limits.CPU }}"
+              cpu: "{{ .Values.resources.limits.cpu }}"
               memory: "{{ .Values.resources.limits.memory }}"
           volumeMounts:
             name: config-volume
