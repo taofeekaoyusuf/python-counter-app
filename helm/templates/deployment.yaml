@@ -17,9 +17,9 @@ spec:
         app: python-counter-app
     spec:
       containers:
-        - image: "{{ .Values.image.repository }}"
-          name: "{{ .Values.image.name }}"
-          imagePullPolicy: "{{ .Values.image.pullPolicy }}"
+        - image: dhackbility/python-counter-app:1.0.0
+          name: python-counter-app
+          imagePullPolicy: IfNotPresent
           readinessProbe:
             httpGet:
               path: /healthz
@@ -56,5 +56,5 @@ spec:
           configMap:
             name: application-settings
       env:
-        - name: "{{ .Values.env.name }}"
-          value: "{{ .Values.env.value }}"
+        - name: http
+          value: 8087
