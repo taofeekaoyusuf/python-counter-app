@@ -22,7 +22,7 @@ spec:
         ports:
           name: http
           containerPort: "{{ .Values.serviceContainerPort }}"
-          protocol: { { .Values.serviceProtocol | quote } }
+          protocol: "{{ .Values.serviceProtocol | quote }}"
         volumeMounts:
           name: config-volume
           mountPath: /helm/templates/
