@@ -1,5 +1,5 @@
-docker build -t dhackbility/python-counter-app:v1.0.0 .
-docker run -dp 8080:80 6379:6379 -n python-counter-app dhackbility/python-counter-app:v1.0.0
+docker build -t dhackbility/python-counter-app:1.0.0 .
+docker run -dp 8080:80 6379:6379 -n python-counter-app dhackbility/python-counter-app:1.0.0
 
 # Installing ARGOCD
 kubectl create namespace argocd

@@ -39,10 +39,10 @@ sleep 2
 # ARGOCD DEPLOYMENT
 
 # Exposing ARGOCD Port
-kubectl port-forward svc/argocd-server -n argocd 8085:443
+kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 # Logging into ARGOCD in the Linux CLI environment
-argocd login localhost:8085
+argocd login localhost:8080
 
 # Creating Application from GitHub Repository on ARGOCD
 # k apply -f ./argocd/argocd-test-app.yaml
