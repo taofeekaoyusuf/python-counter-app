@@ -16,7 +16,7 @@ spec:
         app: python-counter-app
     spec:
       containers:
-        name: { { .Values.imageName } }
+        name: "{{ .Values.imageName }}"
         image: { { .Values.imageRepository | quote } }
         imagePullPolicy: { { .Values.imagePullPolicy | quote } }
         ports:
