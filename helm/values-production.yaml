@@ -1,4 +1,4 @@
-replicas: "3"
+replicas: 3
 
 # image:
 imageName: python-counter-app
@@ -12,7 +12,6 @@ fullnameOverride: ""
 
 # service:
 serviceType: ClusterIP
-servicePort: 80
 serviceTargetPort: 8090
 serviceProtocol: TCP
 serviceHost: python-counter-app.local
