@@ -16,7 +16,7 @@ service:
   targetPort: "8090"
   containerPort: "80"
   protocol: TCP
-  host: python-counter-app.local
+  # host: python-counter-app.local
 
 ingress-enabled: true
 ingress-hosts: python-counter-app.local
