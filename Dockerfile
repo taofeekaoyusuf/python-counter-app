@@ -34,7 +34,7 @@ RUN apk add --no-cache \
 
 # Install the Python dependencies
 RUN pip install --upgrade --user setuptools==58.3.0
-RUN pipenv install --ignore-pipfile
+RUN pipenv install
 
 # Set the environment variables
 ENV REDIS_HOST=localhost
