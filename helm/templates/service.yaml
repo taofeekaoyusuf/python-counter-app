@@ -11,6 +11,6 @@ spec:
   type: LoadBalancer
   ports:
     host: { .Values.serviceHost | quote }
-    port: { { .Values.serviceContainerPort } }
+    port: { .Values.serviceContainerPort } 
     targetPort: { { .Values.serviceTargetPort } }
     Protocol: { { .Values.serviceProtocol | quote } }
