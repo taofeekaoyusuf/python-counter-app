@@ -9,7 +9,6 @@ WORKDIR /app
 
 # Copy the Python code and dependencies
 COPY server.py /app
-# COPY settings.py /app
 COPY storage.py /app
 COPY Pipfile /app
 COPY Pipfile.lock /app
