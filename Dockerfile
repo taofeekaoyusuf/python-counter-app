@@ -9,12 +9,15 @@ WORKDIR /app
 
 # Copy the Python code and dependencies
 COPY server.py /app
+COPY settings.py /app
+COPY storage.py /app
 COPY Pipfile /app
 COPY Pipfile.lock /app
 COPY requirements.txt /app
 
 # Command to install the requirements
 RUN export PYTHONPATH=/usr/bin/python && \ 
+  python -m pip install --upgrade pip && \
   /usr/local/bin/python -m pip install --upgrade pip && \
   pip3 install --trusted-host pypi.python.org -r requirements.txt && \
   rm -rf /var/lib/apt/lists/*
