@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: python-counter-app
-  namespace: default
+  namespace: python-counter-app
   labels:
     app: python-counter-app
 spec:
@@ -20,24 +20,24 @@ spec:
         image: "{{ .Values.imageRepository }}"
         imagePullPolicy: "{{ .Values.imagePullPolicy }}"
         readinessProbe:
-            httpGet:
-                path: "{{ .Values.readinessProbe.path }}"
-                port: "{{ .Values.readinessProbe.port }}"
+          httpGet:
+            path: "{{ .Values.readinessProbe.path }}"
+            port: "{{ .Values.readinessProbe.port }}"
         livenessProbe:
-            httpGet: 
-                path: "{{ .Values.livenessProbe.path }}"
-                port: "{{ .Values.livenessProbe.port }}"
+          httpGet:
+            path: "{{ .Values.livenessProbe.path }}"
+            port: "{{ .Values.livenessProbe.port }}"
         ports:
-            - containerPort: "{{ .Values.containerPort }}"
-              name: http
-              protocol: "{{ .Values.serviceProtocol }}"
+          - containerPort: "{{ .Values.containerPort }}"
+            name: http
+            protocol: "{{ .Values.serviceProtocol }}"
         resources:
-            requests:
-                cpu: "{{ .Values.resources.requests.CPU }}"
-                memory: "{{ .Values.resources.requests.memory }}"
-            limits:
-                cpu: "{{ .Values.resources.limits.CPU }}"
-                memory: "{{ .Values.resources.limits.memory }}"
+          requests:
+            cpu: "{{ .Values.resources.requests.CPU }}"
+            memory: "{{ .Values.resources.requests.memory }}"
+          limits:
+            cpu: "{{ .Values.resources.limits.CPU }}"
+            memory: "{{ .Values.resources.limits.memory }}"
         volumeMounts:
           name: config-volume
           mountPath: /helm/templates/
