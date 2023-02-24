@@ -24,14 +24,18 @@ spec:
             httpGet:
               path: /healthz
               port: 80
-              initialDelaySeconds: 3
-              periodSeconds: 3
+              scheme: HTTP
+            initialDelaySeconds: 3
+            periodSeconds: 3
           livenessProbe:
             httpGet:
               path: /healthz
               port: 80
-              initialDelaySeconds: 3
-              periodSeconds: 3
+              scheme: HTTP
+            initialDelaySeconds: 3
+            periodSeconds: 3
+            successThreshold: 1
+            failureThreshold: 5
           ports:
             - containerPort: 80
               name: http
@@ -46,8 +50,9 @@ spec:
           volumeMounts:
             name: config-volume
             mountPath: /
+      dnsPolicy: Default
       volumes:
-        name: config-volume
+      - name: config-volume
         configMap:
           name: application-settings
       env:
