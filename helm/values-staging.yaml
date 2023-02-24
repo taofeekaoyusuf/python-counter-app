@@ -4,7 +4,7 @@ image:
   name: python-counter-app
   repository: dhackbility/python-counter-app
   pullPolicy: IfNotPresent
-  tags: 1.0.0
+  tag: 1.0.0
 
 imagePullSecrets: []
 nameOverride: ""

@@ -17,7 +17,7 @@ spec:
         app: python-counter-app
     spec:
       containers:
-        - image: "{{ .Values.image.repository }}:{{ .Values.image.tags }}"
+        - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           name: "{{ .Values.image.name }}"
           imagePullPolicy: "{{ .Values.image.pullPolicy }}"
           readinessProbe:
@@ -41,7 +41,7 @@ spec:
               memory: "{{ .Values.resources.limits.memory }}"
           volumeMounts:
             name: config-volume
-            mountPath: /helm/templates/
+            mountPath: "./helm/templates/"
       volumes:
         name: config-volume
         configMap:
