@@ -1,20 +1,22 @@
 replicaCount: "2"
 
-image-name: python-counter-app
-image-repository: dhackbility/python-counter-app
-image-pullPolicy: IfNotPresent
-image-tag1: "1.0.0"
-image-tag2: latest
+# image:
+imageName: python-counter-app
+imageRepository: dhackbility/python-counter-app
+imagePullPolicy: IfNotPresent
+imageTag1: "1.0.0"
+imageTag2: latest
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-service-type: LoadBalancer
-service-targetPort: "8090"
-service-containerPort: "80"
-service-protocol: TCP
-service-host: python-counter-app.local
+# service:
+serviceType: LoadBalancer
+serviceTargetPort: "8090"
+serviceContainerPort: "80"
+serviceProtocol: TCP
+serviceHost: python-counter-app.local
 
 ingress-enabled: true
 ingress-hosts: python-counter-app.local
@@ -22,38 +24,5 @@ ingress-hosts: python-counter-app.local
 ## Application level settings  
 appMode: staging
 
-env-name: http
-env-value: "8090"
-
-
-# replicaCount: 2
-
-# image:
-#   name: python-counter-app
-#   repository: dhackbility/python-counter-app
-#   pullPolicy: IfNotPresent
-#   tag1: "1.0.0"
-#   tag2: "latest"
-
-# imagePullSecrets: []
-# nameOverride: ""
-# fullnameOverride: ""
-
-# service:
-#   type: LoadBalancer
-#   port: "8081"
-#   containerPort: "80"
-#   protocol: TCP
-#   host: python-counter-app.local
-
-# ingress:
-#   enabled: true
-#   hosts:
-#   - python-counter-app.local
-
-# ## Application level settings  
-# appMode: staging
-
-# env:
-#   - name: http
-# value: "8080"
+envName: http
+envValue: "8090"
