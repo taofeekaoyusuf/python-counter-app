@@ -14,7 +14,7 @@ service:
   type: ClusterIP
   port: !!int 80
   targetPort: !!int 8087
-  protocol: !!str "TCP"
+  protocol: !!str TCP
 
 livenessProbe:
     path: /healthz
@@ -32,7 +32,7 @@ resources:
     CPU: 500m
 
 ingress-enabled: true
-ingress-hosts: python-counter-app.local
+ingress-hosts: !!str python-counter-app.local
 
 ## Application level settings  
 appMode: production

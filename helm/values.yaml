@@ -4,7 +4,7 @@ image:
   name: python-counter-app
   repository: dhackbility/python-counter-app
   pullPolicy: IfNotPresent
-  tags: 1.0.0
+  tags: !!str 1.0.0
 
 imagePullSecrets: []
 nameOverride: ""
@@ -32,7 +32,7 @@ resources:
     CPU: 500m
 
 ingress-enabled: true
-ingress-hosts: python-counter-app.local
+ingress-hosts: !!str python-counter-app.local
 
 ## Application level settings  
 appMode: sandbox
