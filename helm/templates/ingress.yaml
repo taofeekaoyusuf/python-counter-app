@@ -13,16 +13,16 @@ spec:
     secretName: python-counter-app-cert
   ingressClassName: nginx
   rules:
-    host: python-counter-app.local
-    http:
-      paths:
-        backend:
-          service:
-            name: python-counter-app-svc
-            port:
-              number: 80
-        path: /
-        pathType: Prefix
+    - host: python-counter-app.local
+      http:
+        paths:
+          backend:
+            service:
+              name: python-counter-app-svc
+              port:
+                number: 80
+          path: /
+          pathType: Prefix
     # host: python-counter-app.local
     # http:
     #   paths:
