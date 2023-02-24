@@ -9,7 +9,7 @@ spec:
   selector:
     matchLabels:
       app: python-counter-app
-  replicas: { { .Values.replicas | quote } }
+  replicas: "{{ .Values.replicas }}"
   template:
     metadata:
       labels:
