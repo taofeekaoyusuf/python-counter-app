@@ -13,8 +13,7 @@ service:
   type: ClusterIP
   port: !!int 80
   targetPort: !!int 8087
-  protocol: TCP
-  name: python-counter-app.local
+  protocol: !!str TCP
 
 livenessProbe:
     path: /healthz
