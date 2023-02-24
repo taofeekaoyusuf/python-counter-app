@@ -16,6 +16,21 @@ servicePort: 80
 serviceTargetPort: 8090
 serviceProtocol: TCP
 serviceHost: python-counter-app.local
+containerPort: 80
+livenessProbe:
+    path: /healthz
+    port: 80
+readinessProbe:
+    path: /healthz
+    port: 80
+
+resources: 
+  requests: 
+    memory: 64Mi
+    CPU: 250m
+  limits:
+    memory: 128Mi
+    CPU: 500m
 
 ingress-enabled: true
 ingress-hosts: python-counter-app.local

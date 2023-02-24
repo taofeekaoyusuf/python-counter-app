@@ -19,10 +19,25 @@ spec:
         name: "{{ .Values.imageName }}"
         image: "{{ .Values.imageRepository }}"
         imagePullPolicy: "{{ .Values.imagePullPolicy }}"
+        readinessProbe:
+            httpGet:
+                path: "{{ .Values.readinessProbe.path }}"
+                port: "{{ .Values.readinessProbe.port }}"
+        livenessProbe:
+            httpGet: 
+                path: "{{ .Values.livenessProbe.path }}"
+                port: "{{ .Values.livenessProbe.port }}"
         ports:
-          name: http
-          containerPort: "{{ .Values.serviceContainerPort }}"
-          protocol: "{{ .Values.serviceProtocol }}"
+            - containerPort: "{{ .Values.containerPort }}"
+              name: http
+              protocol: "{{ .Values.serviceProtocol }}"
+        resources:
+            requests:
+                cpu: "{{ .Values.resources.requests.CPU }}"
+                memory: "{{ .Values.resources.requests.memory }}"
+            limits:
+                cpu: "{{ .Values.resources.limits.CPU }}"
+                memory: "{{ .Values.resources.limits.memory }}"
         volumeMounts:
           name: config-volume
           mountPath: /helm/templates/
