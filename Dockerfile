@@ -16,9 +16,8 @@ COPY Pipfile.lock /app
 COPY requirements.txt /app
 
 # Command to install the requirements
-RUN export PYTHONPATH=/usr/bin/python && \ 
-  python -m pip install --upgrade pip && \
-  # /usr/local/bin/python -m pip install --upgrade pip && \
+RUN python -m pip install --upgrade pip && \
+  # /usr/local/bin/python -m pip install --upgrade pip && export PYTHONPATH=/usr/bin/python && \ 
   pip3 install --trusted-host pypi.python.org -r requirements.txt && \
   rm -rf /var/lib/apt/lists/*
 
