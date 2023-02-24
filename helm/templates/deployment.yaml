@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: python-counter-app
   namespace: python-counter-app
-    app: Deployment
+    app: python-counter-app
 spec:
   selector:
     matchLabels:
