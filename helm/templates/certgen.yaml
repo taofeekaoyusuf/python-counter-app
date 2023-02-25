@@ -7,6 +7,6 @@ spec:
   secretName: python-counter-app-cert
   issuerRef:
     name: bp-issuer-account-key
-    kind: ClusterIssuer
+    kind: Issuer
   dnsNames:
     - "python-counter-app.local"

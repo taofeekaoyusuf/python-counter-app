@@ -16,7 +16,7 @@ spec:
 
   # acme:
   #   email: taofeekaoyusuf@gmail.com
-  #   server: https://api.buypass.com/acme/directory # https://acme-v02.api.letsencrypt.org/directory
+  #   server: https://acme-v02.api.letsencrypt.org/directory
   #   privateKeySecretRef:
   #     name: buypass-issuer-account-key
   #   solvers:
