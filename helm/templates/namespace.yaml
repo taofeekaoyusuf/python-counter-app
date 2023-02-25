@@ -1,0 +1,5 @@
+# Creaating a namespace
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: python-counter-app
