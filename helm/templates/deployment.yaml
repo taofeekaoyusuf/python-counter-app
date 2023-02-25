@@ -28,26 +28,22 @@ spec:
             - name: "http"
               value: 8087
           ports:
-            - containerPort: 80
-              name: "http"
+            - name: "http"
+              containerPort: 80
               protocol: TCP
               hostPort: 8087
-          volumes:
-            - name: config-volume
-              configMap:
-                name: application-settings
-              volumeMounts:
-                name: config-volume
-                mountPath: "/"
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: 80
-              scheme: HTTP
+          volumeMounts:
+          - name: config-volume
+            mountPath: "/config"
           livenessProbe:
             httpGet:
               path: /healthz
-              port: 80
+              port: http
+              scheme: HTTP
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
               scheme: HTTP
           resources:
             requests:
@@ -57,3 +53,7 @@ spec:
               cpu: "500m"
               memory: "128Mi"
       dnsPolicy: Default
+      volumes:
+        - name: config-volume
+          configMap:
+            name: application-settings
