@@ -34,7 +34,7 @@ spec:
               hostPort: 8087
           volumeMounts:
             - name: config-volume
-              mountPath: "/config"
+              mountPath: /config
           livenessProbe:
             httpGet:
               path: /healthz
