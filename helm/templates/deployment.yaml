@@ -12,8 +12,8 @@ spec:
       app: python-counter-app
   strategy:
     rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
+      maxSurge: "25%"
+      maxUnavailable: "25%"
     type: RollingUpdate
   template:
     metadata:
