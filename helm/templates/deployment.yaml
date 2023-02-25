@@ -26,7 +26,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: http
-              value: 8087
+              value: "8087"
           ports:
             - name: http
               containerPort: 80
