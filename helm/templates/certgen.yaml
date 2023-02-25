@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: python-counter-app-cert
   issuerRef:
-    name: buypass
+    name: bp-issuer-account-key
     kind: ClusterIssuer
   dnsNames:
     - "python-counter-app.local"
