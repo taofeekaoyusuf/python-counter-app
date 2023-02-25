@@ -1,16 +1,22 @@
 version: '3'
 services:
-  redis-back-end:
-    image: redis
+  app:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    ports:
+      - "80:80"
+  redis:
+    image: "redis:alpine"
     container_name: redisbackend
     ports:
         - "6379:6379"
 
-  python-counter-app:
-    build: ./python-counter-app
-    image: python:3.9-alpine
-    container_name: python-counter-app
-    environment:
-      REDIS: redisbackend
-    ports:
-        - "80:80"
+  # python-counter-app:
+  #   build: ./python-counter-app
+  #   image: python:3.9-alpine
+  #   container_name: python-counter-app
+  #   environment:
+  #     REDIS: redisbackend
+  #   ports:
+  #       - "80:80"

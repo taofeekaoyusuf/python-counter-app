@@ -1,0 +1,22 @@
+# Creating ReplicaSet
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: python-counter-app
+  namespace: python-counter-app
+spec:
+  replicas: { { .Values.replicaCount } }
+  selector:
+    matchLabels:
+      app: klein
+  template:
+    metadata:
+      labels:
+        app: klein
+    spec:
+      containers:
+        - name: python-counter-app
+          image: dhackbility/python-counter-app:1.0.0
+          ports:
+            - name: http
+              containerPort: 80

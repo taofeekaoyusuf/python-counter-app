@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: redis
+  name: redis
+  namespace: python-counter-app
+spec:
+  ports:
+    - name: redis
+      ports: 6379
+      targetPort: redisport
+  selector:
+    app: redis

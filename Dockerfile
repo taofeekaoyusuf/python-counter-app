@@ -7,7 +7,16 @@ LABEL maintainer="Taofeek A.O. Yusuf"
 # Set the working directory
 WORKDIR /app
 
+# Install pip dependencies
+RUN apk add --no-cache --update make build-base libffi-dev openssl-dev
+RUN pip install pipenv
+
+# Install the Python dependencies
+RUN pip install --upgrade --user setuptools==58.3.0
+RUN pipenv install
+
 # Copy the Python code and dependencies
+COPY requirements.txt requirements.txt
 COPY server.py /app
 COPY storage.py /app
 COPY Pipfile /app
@@ -24,26 +33,11 @@ RUN export PYTHONPATH=/usr/bin/python & \
   pip3 install --trusted-host pypi.python.org -r requirements.txt & \
   rm -rf /var/lib/apt/lists/* 
 
-# Install the dependencies
-RUN apk add --no-cache \
-  redis \
-  build-base \
-  libffi-dev \
-  openssl-dev \
-  && pip install pipenv
-
-# Install the Python dependencies
-RUN pip install --upgrade --user setuptools==58.3.0
-RUN pipenv install
-
 # Set the environment variables
 ENV REDIS_HOST=localhost
 ENV REDIS_PORT=6379
 ENV SERVER_HOST=0.0.0.0
 ENV SERVER_PORT=80
-
-# Expose Ports
-EXPOSE 80 6379
 
 # Start the server
 CMD ["pipenv", "run", "python", "server.py"]
