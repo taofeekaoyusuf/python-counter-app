@@ -4,9 +4,9 @@ metadata:
   name: python-counter-app-cert
   namespace: cert-manager
 spec:
-  secretName: python-counter-app-cert
+  secretName: letsencrypt-prod
   issuerRef:
-    name: bp-issuer-account-key
-    kind: Issuer
+    name: letsencrypt-prod
+    kind: ClusterIssuer
   dnsNames:
     - "python-counter-app.local"

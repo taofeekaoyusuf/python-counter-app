@@ -1,18 +1,20 @@
 apiVersion: cert-manager.io/v1
-kind: Issuer
+kind: ClusterIssuer
 metadata:
-  name: bp-issuer
+  annotations:
+  name: letsencrypt-prod
   namespace: cert-manager
+  selfLink: /apis/cert-manager.io/v1alpha2/clusterissuers/letsencrypt-prod
 spec:
   acme:
     email: taofeekaoyusuf@gmail.com
-    server: https://api.buypass.com/acme/directory
+    server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
-      name: bp-issuer-account-key
+      name: letsencrypt-prod
     solvers:
-      - http01:
-          ingress:
-            class: nginx
+    - http01:
+        ingress:
+          class: nginx
 
   # acme:
   #   email: taofeekaoyusuf@gmail.com
