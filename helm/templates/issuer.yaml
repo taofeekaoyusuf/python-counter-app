@@ -4,7 +4,7 @@ metadata:
   annotations:
   name: letsencrypt-prod
   namespace: cert-manager
-  selfLink: /apis/cert-manager.io/v1alpha2/clusterissuers/letsencrypt-prod
+  selfLink: /apis/cert-manager.io/v1/clusterissuers/letsencrypt-prod
 spec:
   acme:
     email: taofeekaoyusuf@gmail.com
@@ -14,6 +14,7 @@ spec:
     solvers:
     - http01:
         ingress:
+          name: python-counter-app-route
           class: nginx
 
   # acme:
