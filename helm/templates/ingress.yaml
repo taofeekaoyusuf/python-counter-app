@@ -8,7 +8,6 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     kubernetes.io/tls-acme: "true"
-  selfLink: /apis/extensions/v1beta1/namespaces/default/ingresses/example-ingress
 spec:
   tls:
     - hosts:
@@ -21,7 +20,7 @@ spec:
         paths:
           - backend:
               service:
-                name: python-counter-app-svc
+                name: python-counter-app
                 port:
                   number: 80
             path: /
