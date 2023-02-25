@@ -25,16 +25,16 @@ spec:
           name: python-counter-app
           imagePullPolicy: IfNotPresent
           env:
-            - name: "http"
+            - name: http
               value: 8087
           ports:
-            - name: "http"
+            - name: http
               containerPort: 80
               protocol: TCP
               hostPort: 8087
           volumeMounts:
-          - name: config-volume
-            mountPath: "/config"
+            - name: config-volume
+              mountPath: "/config"
           livenessProbe:
             httpGet:
               path: /healthz
