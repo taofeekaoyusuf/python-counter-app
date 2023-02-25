@@ -4,7 +4,7 @@ metadata:
   name: python-counter-app-route
   namespace: python-counter-app
   annotations:
-    cert-manager.io/cluster-issuer: bp
+    cert-manager.io/cluster-issuer: bp-issuer
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
 spec:
