@@ -43,7 +43,7 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 sleep 2
 
 # Logging into ARGOCD in the Linux CLI environment
-argocd login localhost:8080 --username admin --password VVcHUfUEhQAlUiWx -y
+argocd login localhost:8080 --username admin --password VVcHUfUEhQAlUiWx
 sleep 2
 
 # Creating Application from GitHub Repository on ARGOCD
