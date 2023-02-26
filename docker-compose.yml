@@ -5,7 +5,7 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - "80:80"
+      - "8090:8090"
   redis:
     image: "redis:alpine"
     container_name: redisbackend
