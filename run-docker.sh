@@ -9,11 +9,11 @@ docker push dhackbility/redis:alpine
 docker run -dp 8080:80 6379:6379 -n python-counter-app dhackbility/python-counter-app:1.0.0
 
 # ALTERNATIVELY
-docker-compose up --build 
+docker compose up --build 
 # OR
 docker compose up -d
 # OR
-docker-compose up --build -d
+docker compose up --build -d
 
 # Installing ARGOCD
 kubectl create namespace argocd
