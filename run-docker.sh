@@ -12,6 +12,8 @@ docker run -dp 8080:80 6379:6379 -n python-counter-app dhackbility/python-counte
 docker-compose up --build 
 # OR
 docker compose up -d
+# OR
+docker-compose up --build -d
 
 # Installing ARGOCD
 kubectl create namespace argocd
