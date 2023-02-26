@@ -4,7 +4,6 @@ metadata:
   annotations:
   name: letsencrypt-prod
   namespace: cert-manager
-  selfLink: /apis/cert-manager.io/v1/clusterissuers/letsencrypt-prod
 spec:
   acme:
     email: taofeekaoyusuf@gmail.com
