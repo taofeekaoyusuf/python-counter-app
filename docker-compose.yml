@@ -3,7 +3,7 @@ services:
   app:
     build:
       context: .
-      dockerfile: app/Dockerfile
+      dockerfile: ./app/Dockerfile
     ports:
       - "80:80"
   redis:
