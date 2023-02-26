@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: python-counter-app-route
+  name: python-counter-app-ingress
   namespace: python-counter-app
   annotations:
     cert-manager.io/cluster-issuer: letsencrypt-prod
@@ -20,7 +20,7 @@ spec:
         paths:
           - backend:
               service:
-                name: python-counter-app
+                name: python-counter-app-svc
                 port:
                   number: 80
             path: /

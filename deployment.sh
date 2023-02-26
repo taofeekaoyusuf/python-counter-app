@@ -34,6 +34,8 @@ sleep 2
 echo "\n***### Annotate an Ingress Object with Cert Issuer ###***"
 k apply -f ./helm/templates/certgen.yaml
 # k annotate ingress python-counter-app-ingress cert-manager.io/cluster-issuer=letsencrypt
+# kubectl annotate ingress web-ingress cert-manager.io/issuer=letsencrypt-production --overwrite
+
 sleep 2
 
 # ARGOCD DEPLOYMENT

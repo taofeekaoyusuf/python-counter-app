@@ -3,7 +3,7 @@ kind: Service
 metadata:
   labels:
     app: klein
-  name: python-counter-app
+  name: python-counter-app-svc
   namespace: python-counter-app
 spec:
   ports:
