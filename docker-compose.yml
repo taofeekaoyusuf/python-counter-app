@@ -5,12 +5,10 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - "8090:8090"
+      - "80:80"
   redis:
     image: "redis:alpine"
     container_name: redisbackend
-    ports:
-        - "6379:6379"
 
   # python-counter-app:
   #   build: ./python-counter-app
