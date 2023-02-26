@@ -34,11 +34,11 @@ RUN export PYTHONPATH=/usr/bin/python & \
   pip3 install --trusted-host pypi.python.org -r requirements.txt & \
   rm -rf /var/lib/apt/lists/* 
 
-# Set the environment variables
-ENV REDIS_HOST=localhost
-ENV REDIS_PORT=6379
-ENV SERVER_HOST=0.0.0.0
-ENV SERVER_PORT=80
+# # Set the environment variables
+# ENV REDIS_HOST=localhost
+# ENV REDIS_PORT=6379
+# ENV SERVER_HOST=0.0.0.0
+# ENV SERVER_PORT=80
 
 # Start the server
 CMD ["pipenv", "run", "python", "server.py"]
