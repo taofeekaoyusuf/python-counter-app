@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: dhackbility/redis:latest
+          image: dhackbility/redis:alpine
           ports:
             - name: redisport
               containerPort: 6379
