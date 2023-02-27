@@ -9,8 +9,8 @@ docker push dhackbility/redis:alpine
 docker tag python-counter-app_app dhackbility/python-counter-app:1.0.0 && docker tag redis:alpine dhackbility/redis:alpine && \
 docker push dhackbility/python-counter-app:1.0.0 && docker push dhackbility/redis:alpine
 
-docker tag python-counter-app_app dhackbility/python-counter-app:1.0.0 && docker tag redis:alpine dhackbility/redis:alpine && \
-docker push dhackbility/python-counter-app:1.0.0 && docker push dhackbility/redis:alpine
+docker tag python-counter-app_app:latest dhackbility/python-counter-app_app:latest && docker tag redis:alpine dhackbility/redis:alpine && \
+docker push dhackbility/python-counter-app_app:latest && docker push dhackbility/redis:alpine
 
 # Running Docker Container
 docker run -dp 8081:80 6389:6379 -n python-counter-app dhackbility/python-counter-app:1.0.0
