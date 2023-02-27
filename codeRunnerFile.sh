@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\n*****### PYTHON COUNTER APPLICATION PROJECT: Deploying a Web Application ###*****\n"
+echo "\n*****### PYTHON COUNTER APPLICATION PROJECT: [Deploying a Web Application] ###*****\n"
 sleep 5
 
 echo "\n***### Building the Containers (For Python App and Redis) ###***"
