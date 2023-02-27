@@ -24,14 +24,14 @@ spec:
           image: dhackbility/python-counter-app_app:latest # dhackbility/python-counter-app:1.0.0
           ports:
             - name: http
-              containerPort: 8085
+              containerPort: 80
           imagePullPolicy: IfNotPresent
           env:
             - name: http
               value: "8081"
           ports:
             - name: http
-              containerPort: 8085
+              containerPort: 80
               protocol: TCP
               hostPort: 8081
           volumeMounts:
