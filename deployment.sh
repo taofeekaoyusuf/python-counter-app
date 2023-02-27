@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "\n*****### PYTHON COUNTER APPLICATION PROJECT: Deploying a Web Application ###*****\n"
+echo "\n*****### PYTHON COUNTER APPLICATION PROJECT: [Deploying a Web Application] ###*****\n"
 sleep 2
 
 # Create a shortcut alias for "kubectl"
