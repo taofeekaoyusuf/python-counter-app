@@ -19,6 +19,26 @@ kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 sleep 10
 echo *** ARGODC PORT EXPOSITION OPERATION COMPLETED!!! ***
 
+echo "\n***### Creating Application from GitHub Repository on ARGOCD ###***"
+argocd app create python-counter-app --repo https://github.com/taofeekaoyusuf/python-counter-app.git --path "./helm/templates/" --dest-server https://kubernetes.default.svc --dest-namespace python-counter-app 
+sleep 5
+echo *** APPLICATION CREATION OPERATION COMPLETED!!! ***
+
+echo "\n***###  Checking the Status of the Application ###***"
+argocd app get python-counter-app
+sleep 3
+echo *** APPLICATION STATUS CHECK OPERATION COMPLETED!!! ***
+
+echo "\n***###  Syncing the App on ARGOCD ###***"
+argocd app sync python-counter-app
+sleep 3
+echo *** APPLICATION SYNCING OPERATION COMPLETED!!! ***
+
+echo "\n***###  Accessing the Deployed Application using Port-Forwarding operation ###***"
+kubectl port-forward svc/python-counter-app 8087:80
+sleep 3
+echo *** PORT-FORWARDING OPERATION COMPLETED!!! ***
+
 
 
 
