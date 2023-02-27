@@ -8,8 +8,6 @@ COPY flask_app.py /app
 
 COPY requirements.txt /app
 
-RUN sudo -H pip3 install flask
-
 RUN pip3 install -r requirements.txt
 
 CMD ["gunicorn", "flask_app:app", "--bind", "0.0.0.0:80"]
