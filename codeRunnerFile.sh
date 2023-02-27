@@ -34,10 +34,10 @@ argocd app sync python-counter-app
 sleep 3
 echo *** APPLICATION SYNCING OPERATION COMPLETED!!! ***
 
-echo "\n***###  Accessing the Deployed Application using Port-Forwarding operation ###***"
-kubectl port-forward svc/python-counter-app 8087:80
-sleep 3
-echo *** PORT-FORWARDING OPERATION COMPLETED!!! ***
+# echo "\n***###  Accessing the Deployed Application using Port-Forwarding operation ###***"
+# kubectl port-forward svc/python-counter-app 8081:80
+# sleep 3
+# echo *** PORT-FORWARDING OPERATION COMPLETED!!! ***
 
 
 
