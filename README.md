@@ -16,11 +16,6 @@ This is a Python Counter Application which was deployed using Helm Chart and Arg
 -- `` chmod +x codeRunnerFile.sh `` <br>
 -- `` ./codeRunnerFile.sh ``
 
-
-* Run `` "docker compose up --build -d" ``  to build the containers for the App and Redis.
-* Expose Argocd Server and login, thus: <br>
-  --- `` kubectl port-forward svc/argocd-server -n argocd 8080:443 & `` <br>
-  --- `` argocd login `` <br> and inputting your Argocd Username and Password. <br>
-* 
-  
-
+* Ensure to go to: <br>
+  -- ``http://localhost:8080``<br>
+  to observe the deployed Application instance.

@@ -14,7 +14,7 @@ docker push dhackbility/python-counter-app:1.0.0 && docker push dhackbility/redi
 sleep 5
 echo *** TAGGING AND PUSHING OPERATION COMPLETED!!! ***
 
-echo "\n***### Exposing ARGOCD Port (Ensure to go to: http://localhost:8080)###***"
+echo "\n***### Exposing ARGOCD Port ###***"
 kubectl port-forward svc/argocd-server -n argocd 8080:443 &
 sleep 10
 echo *** ARGODC PORT EXPOSITION OPERATION COMPLETED!!! ***
