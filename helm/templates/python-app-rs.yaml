@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: python-counter-app
-          image: dhackbility/python-counter-app_app:latest # dhackbility/python-counter-app:1.0.0
+          image: dhackbility/python-counter-app:1.0.0 # dhackbility/python-counter-app:1.0.0
           ports:
             - name: http
               containerPort: 80

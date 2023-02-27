@@ -9,10 +9,10 @@ WORKDIR /app
 
 # Install pip dependencies
 RUN apk add --no-cache --update make build-base libffi-dev openssl-dev
-RUN pip install pipenv
+RUN pip3 install pipenv
 
 # Install the Python dependencies
-RUN pip install --upgrade --user setuptools==58.3.0
+RUN pip3 install --upgrade --user setuptools==58.3.0
 RUN pipenv install
 
 # Copy the Python code and dependencies
@@ -41,4 +41,4 @@ RUN export PYTHONPATH=/usr/bin/python & \
 # ENV SERVER_PORT=80
 
 # Start the server
-CMD ["pipenv", "run", "python", "server.py"]
+CMD ["pipenv", "run", "python3", "server.py"]
