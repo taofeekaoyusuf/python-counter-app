@@ -62,4 +62,4 @@ argocd app sync python-counter-app
 sleep 2
 
 # Accessing the Deployed Application using Port-Forwarding operation
-kubectl port-forward svc/python-counter-app 8087:80
+kubectl port-forward svc/python-counter-app 8081:80
