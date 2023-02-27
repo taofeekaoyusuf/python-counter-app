@@ -42,11 +42,11 @@ spec:
               path: /healthz
               port: http
               scheme: HTTP
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: http
-              scheme: HTTP
+          # readinessProbe:
+          #   httpGet:
+          #     path: /healthz
+          #     port: http
+          #     scheme: HTTP
           resources:
             requests:
               cpu: "2000m"
