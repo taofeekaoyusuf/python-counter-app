@@ -8,4 +8,4 @@ COPY flask_app.py /app
 
 RUN pip3 install flask
 
-CMD ["gunicorn", "flask_app:app", "--bind", "0.0.0.0:80"]
+CMD ["gunicorn", "flask_app", "--bind", "0.0.0.0:80"]
