@@ -22,7 +22,7 @@ spec:
               service:
                 name: python-counter-app-svc
                 port:
-                  number: 80
+                  number: 8085
             path: /
             pathType: Prefix
           - backend:
